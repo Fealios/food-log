@@ -16,5 +16,5 @@ export class AppComponent {
 }
 
 export class Keg {
-  constructor(public name: string, public brand: string, public price: int, public alcoholContent: double) { }
+  constructor(public name: string, public brand: string, public price: number, public alcoholContent: number) { }
 }
