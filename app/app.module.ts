@@ -6,6 +6,7 @@ import { KegListComponent } from './keg-list.component';
 import { newKeg } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
 import {PintPipe} from './pint.pipe';
+import {AlcoholContentPipe} from './alcoholContent.pipe';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -14,7 +15,8 @@ import {PintPipe} from './pint.pipe';
                   KegListComponent,
                   EditKegComponent,
                   newKeg,
-                  PintPipe],
+                  PintPipe,
+                  AlcoholContentPipe],
   bootstrap:    [ AppComponent ]
 })
 

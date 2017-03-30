@@ -6,7 +6,11 @@ import { Keg } from './Keg.model';
   template: `
   <h1>Tap Room</h1>
   <div>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+    <select (change)="onChange($event.target.value)">
+      <option value="weak"> Weakest first </option>
+      <option value=""> Strongest first </option>
+    </select>
+    <keg-list [childKegList]="masterKegList | alcoholContent:sortByAlcoholContent" (clickSender)="editKeg($event)"></keg-list>
     <hr>
     <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
@@ -16,6 +20,7 @@ import { Keg } from './Keg.model';
 
 export class AppComponent {
   selectedKeg = null;
+  sortByAlcoholContent: string ="weak";
 
   masterKegList: Keg[] = [
     new Keg("Keg 1", "Budweiser", 100, 5.6),
@@ -36,6 +41,10 @@ export class AppComponent {
   editKeg(clickedKeg) {
     console.log(clickedKeg.brand);
     this.selectedKeg = clickedKeg;
+  }
+
+  onChange(strength){
+    this.sortByAlcoholContent = strength;
   }
 
 }
