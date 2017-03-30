@@ -34,6 +34,7 @@ export class AppComponent {
   }
 
   editKeg(clickedKeg) {
+    console.log(clickedKeg.brand);
     this.selectedKeg = clickedKeg;
   }
 
