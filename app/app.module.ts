@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FormsModule }    from '@angular/forms';
 import { FoodListComponent} from './food-list.component';
+import { AddFood } from './add-food.component';
 
 @NgModule({
   imports: [ BrowserModule,
               FormsModule,],
   declarations: [ AppComponent,
-                  FoodListComponent],
+                  FoodListComponent,
+                  AddFood],
   bootstrap:    [ AppComponent ]
 })
 
