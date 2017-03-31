@@ -5,6 +5,7 @@ import { FormsModule }    from '@angular/forms';
 import { FoodListComponent} from './food-list.component';
 import { AddFood } from './add-food.component';
 import { CalPipe } from './cal.pipe';
+import { EditFoodComponent } from './edit-food.component'
 
 @NgModule({
   imports: [ BrowserModule,
@@ -12,7 +13,8 @@ import { CalPipe } from './cal.pipe';
   declarations: [ AppComponent,
                   FoodListComponent,
                   AddFood,
-                  CalPipe],
+                  CalPipe,
+                  EditFoodComponent],
   bootstrap:    [ AppComponent ]
 })
 

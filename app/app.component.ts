@@ -13,12 +13,14 @@ import { Food } from './Food.model';
   </div>
 
   <h1>Food log</h1>
-  <food-list [childFoodList]="masterFoodList | calPipe:sortByCal"></food-list>
+  <food-list [childFoodList]="masterFoodList | calPipe:sortByCal" (clickSender)="editFood($event)"></food-list>
+  <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
   <add-food (newFoodSender)="addFood($event)"></add-food>
   `
 })
 
 export class AppComponent {
+  selectedFood = null;
   sortByCal: string = "all";
 
   masterFoodList: Food[] = [
@@ -33,6 +35,14 @@ export class AppComponent {
 
   onChange(cal){
     this.sortByCal = cal;
+  }
+
+  finishedEditing() {
+    this.selectedFood = null;
+  }
+
+  editFood(clickedFood){
+    this.selectedFood = clickedFood;
   }
 
 }
