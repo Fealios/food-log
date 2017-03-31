@@ -5,7 +5,7 @@ import { Food } from './Food.model';
   selector: 'app-root',
   template: `
   <h1>Food log</h1>
-  <food-list></food-list>
+  <food-list [childFoodList]="masterFoodList"></food-list>
   `
 })
 
