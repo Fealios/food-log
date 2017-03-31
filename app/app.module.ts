@@ -2,21 +2,13 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FormsModule }    from '@angular/forms';
-import { KegListComponent } from './keg-list.component';
-import { newKeg } from './new-keg.component';
-import { EditKegComponent } from './edit-keg.component';
-import {PintPipe} from './pint.pipe';
-import {AlcoholContentPipe} from './alcoholContent.pipe';
+import { FoodListComponent} from './food-list.component';
 
 @NgModule({
   imports: [ BrowserModule,
-              FormsModule],
+              FormsModule,],
   declarations: [ AppComponent,
-                  KegListComponent,
-                  EditKegComponent,
-                  newKeg,
-                  PintPipe,
-                  AlcoholContentPipe],
+                  FoodListComponent],
   bootstrap:    [ AppComponent ]
 })
 
