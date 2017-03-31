@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Food } from './Food.model';
 
 @Component ({
@@ -6,7 +6,8 @@ import { Food } from './Food.model';
   template: `
     <h3> here is the food list </h3>
     <div *ngFor="let currentFood of childFoodList">
-      {{currentFood.name}}
+        {{currentFood.name}}
+        {{currentFood.calories}}
     </div>
   `
 })
