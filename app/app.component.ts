@@ -4,18 +4,24 @@ import { Food } from './Food.model';
 @Component({
   selector: 'app-root',
   template: `
-  <div id="sort">
-    <select (change)="onChange($event.target.value)">
-      <option value="all"> All foods </option>
-      <option value="low"> Lowest calorie </option>
-      <option value="high"> Highest calorie </option>
-    </select>
-  </div>
 
-  <h1>Food log</h1>
-  <food-list [childFoodList]="masterFoodList | calPipe:sortByCal" (clickSender)="editFood($event)"></food-list>
-  <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
-  <add-food (newFoodSender)="addFood($event)"></add-food>
+  <h1 id="title">Food log</h1>
+
+  <div id="master">
+    <div id="sort">
+      <select id="pipe-control" class="form-control" (change)="onChange($event.target.value)">
+        <option value="all"> All foods </option>
+        <option value="low"> Lowest calorie </option>
+        <option value="high"> Highest calorie </option>
+      </select>
+    </div>
+
+    <food-list [childFoodList]="masterFoodList | calPipe:sortByCal" (clickSender)="editFood($event)"></food-list>
+    
+    <add-food (newFoodSender)="addFood($event)"></add-food>
+    <edit-food [childSelectedFood]="selectedFood" (doneButtonClickedSender)="finishedEditing()"></edit-food>
+
+  </div>
   `
 })
 

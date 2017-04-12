@@ -14,7 +14,7 @@ export class CalPipe implements PipeTransform {
         if(calories === "low" && input[i].calories < 500){
           output.push(input[i]);
         }
-        else if(calories === "high" && input[i].calories > 500){
+        else if(calories === "high" && input[i].calories >= 500){
           output.push(input[i]);
         }
       }

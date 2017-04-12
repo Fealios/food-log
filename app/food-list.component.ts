@@ -4,14 +4,14 @@ import { Food } from './Food.model';
 @Component ({
   selector: 'food-list',
   template: `
-    <h3> here is the food list </h3>
+    <h3> Your log: </h3>
     <div *ngFor="let currentFood of childFoodList">
-        {{currentFood.name}}
-        {{currentFood.calories}}
-        <p>
+        <h5 class="food-name">{{currentFood.name}}</h5>
+        cal: <span class="food-calories">{{currentFood.calories}} </span>
+        <p class="food-description">
         {{currentFood.description}}
         </p>
-        <button (click)="editButtonHasBeenClicked(currentFood)"> Edit </button>
+        <button class="btn btn-default" (click)="editButtonHasBeenClicked(currentFood)"> Edit </button>
     </div>
   `
 })
